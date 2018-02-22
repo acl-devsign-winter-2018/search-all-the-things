@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { movieDetail } from '../../services/movieApi';
-import './movie-detail.css';
 import MovieDisplay from './MovieDisplay';
 
 export default class MovieDetail extends Component {

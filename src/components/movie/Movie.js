@@ -19,7 +19,7 @@ export default class Movie extends Component {
     if(Poster === 'N/A') {
       return (
         <li className="posters">
-          <Link to={`/movies/${imdbID}`}>
+          <Link className="missing-poster-a" to={`/movies/${imdbID}`}>
             <span className="missing-poster">?</span>
             <h2>{Title}</h2>
             <p>{Year}</p>
