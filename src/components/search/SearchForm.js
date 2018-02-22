@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Search.css';
 
-export default class Search extends Component {
+export default class SearchForm extends Component {
   
   static propTypes = {
     onSearch: PropTypes.func.isRequired
@@ -32,8 +32,8 @@ export default class Search extends Component {
     return (
       <form className={styles.search} onSubmit={this.handleSubmit}>
         <label>
-          Search For:
-          <input value={search} onChange={this.handleChange}/>
+          Search:
+          <input name="search" placeholder="Movies" value={search} onChange={this.handleChange}/>
         </label>
         <button>Search</button>
       </form>
