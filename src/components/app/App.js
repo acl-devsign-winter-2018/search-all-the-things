@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import './app.css';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, Link } from 'react-router-dom';
 import SearchHolder from '../search/SearchHolder';
 import MovieDetail from '../movie/MovieDetail';
 
-
 export default class App extends Component {
-
-
 
   render() {
 
@@ -16,12 +13,15 @@ export default class App extends Component {
       <Router>
         <div id="container">
           <header id="header">
-            <h1>MoviesNow App</h1>
+            <Link to="/"><h1>MoviesNow App</h1></Link>
           </header>
-          
+
           <main id="main">
-            <SearchHolder/>
-            <Route path="/movies/:id" render={({ match }) => <MovieDetail imdbID={match.params.id}/>}/>
+            <Switch>
+              <Route exact path="/" component={SearchHolder}/>
+              <Route path="/movies/:id" render={({ match }) => <MovieDetail imdbID={match.params.id}/>}/>
+              <Redirect to="/"/>
+            </Switch>
           </main>
 
           <footer id="footer">

@@ -84,32 +84,34 @@ export default class SearchHolder extends Component {
             <img src={loadingImage}/>
           </div>
         )}
-        <section id="search">
-          <Search onSearch={this.handleSearch}/>
-          {movies && resultsHeader}
-          {(!error && movies) && (
-            <div className="filter" onClick={this.handleFilter}>
-              <button>Movie</button>
-              <button>Series</button>
-            </div>
-          )}
-          {error && <pre>{error}</pre>}
-        </section>
-        <section id="results">
-          {movies && (
-            <div>
-              <Paging totalResults={totalResults}
-                page={page}
-                onPrev={this.handlePrev}
-                onNext={this.handleNext}/>
-              <Movies movies={movies}/>
-              <Paging totalResults={totalResults}
-                page={page}
-                onPrev={this.handlePrev}
-                onNext={this.handleNext}/>
-            </div>
-          )}
-        </section>
+        <div id="sections">
+          <section id="search">
+            <Search onSearch={this.handleSearch}/>
+            {movies && resultsHeader}
+            {(!error && movies) && (
+              <div className="filter" onClick={this.handleFilter}>
+                <button>Movie</button>
+                <button>Series</button>
+              </div>
+            )}
+            {error && <pre>{error}</pre>}
+          </section>
+          <section id="results">
+            {movies && (
+              <div>
+                <Paging totalResults={totalResults}
+                  page={page}
+                  onPrev={this.handlePrev}
+                  onNext={this.handleNext}/>
+                <Movies movies={movies}/>
+                <Paging totalResults={totalResults}
+                  page={page}
+                  onPrev={this.handlePrev}
+                  onNext={this.handleNext}/>
+              </div>
+            )}
+          </section>
+        </div>
       </div>
     );
   }

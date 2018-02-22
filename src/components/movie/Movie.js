@@ -18,7 +18,7 @@ export default class Movie extends Component {
 
     if(Poster === 'N/A') {
       return (
-        <li>
+        <li className="posters">
           <Link to={`/movies/${imdbID}`}>
             <p className="missing-poster">?</p>
             <h2>{Title}</h2>
@@ -29,7 +29,7 @@ export default class Movie extends Component {
     }
     
     return (
-      <li>
+      <li className="posters">
         <Link to={`/movies/${imdbID}`}>
           <img src={Poster}/>
           <h2>{Title}</h2>
