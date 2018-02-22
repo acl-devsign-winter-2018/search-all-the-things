@@ -1,15 +1,19 @@
 const API_KEY = '1ecac68e';
-const BASE_URL = 'http://www.omdbapi.com/?';
+const BASE_URL = 'http://www.omdbapi.com';
+const URL = `${BASE_URL}/?apikey=${API_KEY}`;
 
 export function search(query, page = 1) {
-  const url = `${BASE_URL}s=${encodeURIComponent(query)}&page=${page}&apiKey=${API_KEY}`;
-  
+  const url = `${URL}&s=${encodeURIComponent(query)}&page=${page}`;
   return get(url);
 }
 
 export function filterSearch(query, page = 1, filter) {
-  const url = `${BASE_URL}s=${encodeURIComponent(query)}&type=${filter}&page=${page}&apiKey=${API_KEY}`;
-  
+  const url = `${URL}&s=${encodeURIComponent(query)}&type=${filter}&page=${page}`;
+  return get(url);
+}
+
+export function movieDetail(id) {
+  const url = `${URL}&i=${id}`;
   return get(url);
 }
 
