@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
-import MovieDetail from './MovieDetail';
+import MovieDisplay from './MovieDisplay';
 
-describe('MovieDetail', () => {
+describe('MovieDisplay', () => {
   it('renders single movie in detail', () => {
     const movie = {
       'Title': 'Requiem for a Dream',
@@ -46,7 +46,7 @@ describe('MovieDetail', () => {
       'Response': 'True'
     };
 
-    const wrapper = shallow(<MovieDetail key={movie.imdbID} movie={movie}/>);
+    const wrapper = shallow(<MovieDisplay movie={movie}/>);
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });
