@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetail renders single movie in detail 1`] = `
+<div
+  className="movie-detail"
+>
+  <h2>
+    Requiem for a Dream
+  </h2>
+  <img
+    src="https://images-na.ssl-images-amazon.com/images/M/MV5BOTdiNzJlOWUtNWMwNS00NmFlLWI0YTEtZmI3YjIzZWUyY2Y3XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+  />
+  <div
+    className="stats-container"
+  >
+    <p>
+      Directed By: 
+      Darren Aronofsky
+    </p>
+    <p>
+      Released: 
+      2000
+    </p>
+    <p>
+      Rating: 
+      R
+    </p>
+    <p>
+      Genre: 
+      Drama
+    </p>
+    <p>
+      Box Office: 
+      $2,546,851
+    </p>
+  </div>
+  <p>
+    Summary: 
+    The drug-induced utopias of four Coney Island people are shattered when their addictions run deep.
+  </p>
+</div>
+`;
