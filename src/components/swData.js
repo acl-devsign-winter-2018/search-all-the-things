@@ -12,9 +12,7 @@ export default class SwData extends Component {
 
       return (
         <li>
-          <a>
-            <h2>{ article.name}</h2>
-          </a>
+          { article.name}
         </li>
       );
     }
