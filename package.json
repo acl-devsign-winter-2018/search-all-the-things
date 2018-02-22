@@ -9,7 +9,7 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "test": "jest",
-    "test:watch": "nprm run test -- --watch"
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",

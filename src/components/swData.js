@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 export default class SwData extends Component {
 
     static propTypes = {
-      article: PropTypes.object
+      name: PropTypes.string
     };
 
     render(){
-      const { article } = this.props;
+      const { name } = this.props;
 
       return (
         <li>
-          { article.name}
+          { name }
         </li>
       );
     }

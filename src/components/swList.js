@@ -12,9 +12,7 @@ export default class swList extends Component {
 
       return (
         <ul>
-          {results.map((data, i) => (
-            <SwData key = {i} article={data}/>
-          ))}
+          {results.map(data => <SwData key = {data.name} {...data}/>)}
         </ul>
       );
     }
