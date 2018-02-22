@@ -15,7 +15,7 @@ export default class Details extends Component {
     };
 
     componentDidMount(){
-      search(this.propTypes.name)
+      search(this.props.name)
         .then(searchDetail => this.setState({ searchDetail }));
     }
 
