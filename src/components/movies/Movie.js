@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default class Movie extends Component {
 
@@ -12,10 +13,12 @@ export default class Movie extends Component {
 
     return (
       <li> 
-        <img src={Poster}/>
-        <h3>{Title}</h3>
-        <p>Year made: {Year}</p>
-        <p>{Type} | IMDB ID: {imdbID}</p>
+        <Link to={`/movies/${imdbID}`}>
+          <img src={Poster}/>
+          <h3>{Title}</h3>
+          <p>Year made: {Year}</p>
+          <p>{Type} | IMDB ID: {imdbID}</p>
+        </Link>
       </li>
     );
   }
