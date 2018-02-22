@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import './App.css';
 import Header from './header/Header';
 import Search from './search/Search';
+// import MovieDetail from './movies/MovieDetail';
 // import Paging from './paging/Paging';
 // import Articles from './movies/Articles';
-import { search } from '../services/omdbApi';
+// import { search } from '../services/omdbApi';
 
 export default class App extends Component {
 
   render() {
-    // const { articles, topic, page, totalResults, loading, error } = this.state;
 
     return (
       <div className="app">
@@ -22,6 +22,7 @@ export default class App extends Component {
               <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route path="/search" component={Search}/>
+                <Route path="/movies/:id" render={({ match }) => <MovieDetail imdbID={match.params.id}/>}/>
                 <Redirect to="/"/>
               </Switch>
             </main>

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Article extends Component {
+export default class Movie extends Component {
 
   static propTypes = {
-    article: PropTypes.object.isRequired
+    movie: PropTypes.object.isRequired
   };
 
   render() {
-    const { Title, Year, imdbID, Type, Poster } = this.props.article;
+    const { Title, Year, imdbID, Type, Poster } = this.props.movie;
 
     return (
       <li> 

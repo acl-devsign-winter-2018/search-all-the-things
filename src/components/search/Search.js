@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Articles from '../movies/Articles';
+import Movies from '../movies/Movies';
 import Paging from '../paging/Paging';
 import SearchForm from '../search/SearchForm';
 import { search } from '../../services/omdbApi';
@@ -10,7 +10,7 @@ const PAGE_SIZE = 10;
 export default class Search extends Component {
 
   state = {
-    articles: null,
+    movies: null,
     total: 0,
     topic: null,
     page: 1,
@@ -30,10 +30,10 @@ export default class Search extends Component {
     search(topic, page, PAGE_SIZE)
       .then(
         ({ Search, totalResults }) => {
-          this.setState({ articles: Search, totalResults });
+          this.setState({ movies: Search, totalResults });
         },
         error => {
-          this.setState({ error, articles: null });
+          this.setState({ error, movies: null });
         }
       )
       .then(() => {
@@ -57,7 +57,7 @@ export default class Search extends Component {
   };
 
   render() {
-    const { articles, topic, page, totalResults, loading, error } = this.state;
+    const { movies, topic, page, totalResults, loading, error } = this.state;
 
     return (
       
@@ -65,7 +65,7 @@ export default class Search extends Component {
         <SearchForm onSearch={this.handleSearch}/>
        
         <div className="search-header">
-          {articles ? 
+          {movies ? 
             <div>
               <h5>Search for &quot;{topic}&quot; found {totalResults} matches</h5>
             </div> 
@@ -77,7 +77,7 @@ export default class Search extends Component {
         <div>{loading && 'Loading...'}</div>
         <pre>{error && error.message}</pre>
 
-        {articles && (
+        {movies && (
           <div>
             <Paging totalResults={totalResults}
               page={page} 
@@ -85,7 +85,7 @@ export default class Search extends Component {
               onPrev={this.handlePrev} 
               onNext={this.handleNext}/>
 
-            <Articles articles={articles}/>
+            <Movies movies={movies}/>
           </div>
         )}
       </div>
