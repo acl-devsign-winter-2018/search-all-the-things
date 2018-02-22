@@ -24,6 +24,7 @@
   }
   a {
     color: $dark-green;
+    margin-right: 1rem;
   }
 }
 #main {

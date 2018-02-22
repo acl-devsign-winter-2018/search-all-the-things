@@ -3,6 +3,7 @@ import './app.css';
 import { BrowserRouter as Router, Switch, Route, Redirect, Link } from 'react-router-dom';
 import SearchHolder from '../search/SearchHolder';
 import MovieDetail from '../movie/MovieDetail';
+import About from '../about/About';
 
 export default class App extends Component {
 
@@ -14,12 +15,15 @@ export default class App extends Component {
         <div id="container">
           <header id="header">
             <Link to="/"><h1>MoviesNow App</h1></Link>
+            <Link to="/about">About Page</Link>
+            <Link to="/">New Search</Link>
           </header>
 
           <main id="main">
             <Switch>
               <Route exact path="/" component={SearchHolder}/>
               <Route path="/movies/:id" render={({ match }) => <MovieDetail imdbID={match.params.id}/>}/>
+              <Route exact path="/about" component={About}/>
               <Redirect to="/"/>
             </Switch>
           </main>

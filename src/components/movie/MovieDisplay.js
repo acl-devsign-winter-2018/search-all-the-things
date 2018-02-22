@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import './movie-detail.css';
 
 
@@ -16,7 +15,6 @@ export default class MovieDisplay extends Component {
 
     return (
       <div className="movie-detail">
-        <Link to="/">New Search</Link>
         <h2>{Title}</h2>
         <div className="grid-container">
           {Poster && <img src={Poster}/>}
@@ -33,3 +31,7 @@ export default class MovieDisplay extends Component {
     );
   }
 }
+// function DisplayParagraph({label, value}) {
+//   return value && <p>{label} By: {value}</p>;
+// }
+// example of function for redundant code
