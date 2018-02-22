@@ -1,9 +1,11 @@
+@import './variables.css';
+
 html {height: 100%;}
 
 body {
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  color: #222222;
+  color: $black;
   min-height: 100%;
 }
 
@@ -52,15 +54,15 @@ img {
 
 a {
   text-decoration: none;
-  color: #222222;
+  color: $black;
   transition: 0.3s ease all;
   padding: 0 0 3px;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid $white;
 }
 
 a:hover {
-  color: #f15e22;
-  border-bottom: 3px solid #f15e22;
+  color: $black;
+  border-bottom: 3px solid $link;
 }
 
 /*  -------- Media Queries ------- */

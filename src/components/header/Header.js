@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
+import styles from './Header.css';
 
 export default class Header extends Component {
   render() {
@@ -7,7 +8,7 @@ export default class Header extends Component {
       <header role="banner" id="header">
         <h1>Search App</h1>
         <nav>
-          <ul>
+          <ul className={styles.navlist}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/search">Search</Link></li>
             <Route path="/movies" render={() => <li>only on movies!</li>}/>

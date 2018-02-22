@@ -16,7 +16,6 @@ export default class SearchForm extends Component {
     event.preventDefault();
     const { search } = this.state;
     if(!search.trim()) return;
-    console.log({ search });
 
     this.props.onSearch(search);
   };

@@ -39,6 +39,6 @@ export default class App extends Component {
 
 class Home extends Component {
   render() {
-    return <div>Homess</div>;
+    return <div>Find movies now!</div>;
   }
 }
