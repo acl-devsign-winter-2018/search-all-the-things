@@ -45,6 +45,10 @@ export default class SearchAll extends Component {
     this.setState({ topic }, this.searchSWAPI);
   };
 
+  handleDropdown  = category => {
+    this.setState({ category });
+  };
+
 
   render(){
     const { results, loading } = this.state;
@@ -55,7 +59,7 @@ export default class SearchAll extends Component {
           <Search onSearch={this.handleSearch}/>
         </header>
         <div>
-          <Dropdown/>
+          <Dropdown onChange={this.handleDropdown}/>
         </div>
         <div className="loading">{loading && 'Loading...'}</div>
       
