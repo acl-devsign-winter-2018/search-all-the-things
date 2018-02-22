@@ -4,16 +4,14 @@ const BASE_URL = 'http://www.omdbapi.com/'
 
 
 
-export function search( search , page = 1, pageSize = 20) {
-  const search = `?t=${search}`
-  const searchURL = `${BASE_URL}${search}${API_QUERY}`
-
-  return fetch(url).then( res => {
-    if(res.ok) return res.json();
-    return res.json().then(json => { throw json; });
-  });
+export function searchApi( search, page = 1, pageSize = 20) {
+  const searchQuery = `?t=${search}`;
+  const searchURL = `${BASE_URL}${searchQuery}${API_QUERY}`;
+  console.log(searchURL)
+  //   fetch(searchURL).then( res => {
+  //   console.log(res.json())
+  //   if(res.ok) return res.json();
+  //   return res.json().then(json => { throw json; });
+  // });
 }
 
-// export function getSources() {
-//     return get(search_URL).then(response => response.sources);
-// }
