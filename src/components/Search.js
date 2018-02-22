@@ -14,8 +14,9 @@ export default class search extends Component {
 
     
     handleSubmit = (event) => {
-        if(!this.state.search) return;
-        this.props.onSearch({ ...this.state });
+        const { search } = this.state;
+        if(!search.trim()) return;
+        this.props.onSearch( search );
     };
 
     handleChange = ({ target }) => {
@@ -23,22 +24,24 @@ export default class search extends Component {
       };
 
 
-    handleSources = sources => {
-        this.setState({ sources });
-      };
+    // handleSources = sources => {
+    //     this.setState({ sources });
+    //   };
 
     
     render () {
         const { search } = this.state;
 
         return(
-
-            <form onSubmit={this.handleSubmit}>
-                <div>{search}</div>
-                <label> Enter your search here: </label>
-                <input value={search} onChange={this.handleChange}/>
-                <button> Search </button>
-            </form>
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <div>{search}</div>
+                    <label> Enter your search here: 
+                    <input value={search} onChange={this.handleChange}/>
+                    </label>
+                    <button> Search </button>
+                </form>
+            </div>
         )
         
     }   

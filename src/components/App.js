@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import { search } from '../services/movieApi';
 import Search from './Search';
+import Articles from './Articles';
 
 
 export default class App extends Component {
 
     state = {
         search: '', //same as topic
-        results: null,
+        results: null, //articles
         page: 1, 
         perPage: 20, 
         totalResults: 0, 
@@ -16,16 +17,28 @@ export default class App extends Component {
         error: null
     }
 
-    // searchMovie = () => {
-    //     const { search, sources } = this.state;
-
-    //     this.setState({loading: true, error: null });
-
-    //     search({ search, sources }, page, perPage)
-    //         .then(
-    //             ({ articl})
-    //         )
-    // }
+    searchMovie = () => {
+        const { topic, page } = this.state;
+        
+        this.setState({
+          loading: true,
+          error: null
+        });
+    
+        search(topic, page, PAGE_SIZE)
+          .then(
+            ({ Search, totalResults }) => {
+              this.setState({ articles: Search, totalResults });
+            },
+            error => {
+              this.setState({ error, articles: null });
+            }
+          )
+          .then(() => {
+            this.setState({ loading: false });
+          });
+    
+      };
 
     handleSearch = (search) => {
         this.setState(search, this.search);
