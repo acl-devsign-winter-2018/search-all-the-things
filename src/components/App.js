@@ -96,7 +96,6 @@ export default class App extends Component {
               <div className="filter" onClick={this.handleFilter}>
                 <button>Movie</button>
                 <button>Series</button>
-                <button>Episode</button>
               </div>
             )}
           </section>

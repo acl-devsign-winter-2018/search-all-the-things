@@ -58,6 +58,10 @@
   background: rgba(255, 255, 255, 0.4);
   position: absolute;
   z-index: 100;
+  img{
+    width: 250px;
+    margin: 8rem auto;
+  }
 }
 
 #footer {
