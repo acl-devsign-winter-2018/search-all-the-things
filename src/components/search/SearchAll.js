@@ -3,6 +3,8 @@ import { search } from '../../services/starWarsApi.js';
 import Search from './search';
 import SwList from '../swList';
 import Dropdown from './dropdown';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -48,6 +50,7 @@ export default class SearchAll extends Component {
     const { results, loading } = this.state;
     return (
       <div>
+        <Link to={'/'}>Home</Link>
         <header>
           <Search onSearch={this.handleSearch}/>
         </header>
