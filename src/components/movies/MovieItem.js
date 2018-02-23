@@ -22,10 +22,6 @@ export default class MovieItem extends Component {
             </div>
           }
         </div>
-        
-        <div className="poster">
-          
-        </div>
 
         <div className="movie-description">
           <h3>{Title}</h3>
