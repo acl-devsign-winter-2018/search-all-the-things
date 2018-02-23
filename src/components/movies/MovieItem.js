@@ -13,9 +13,20 @@ export default class MovieItem extends Component {
 
     return (
       <div className="movie-item">
+       
         <div className="poster">
-          <img src={Poster}/>
+          {(Poster !== 'N/A') && <img src={Poster}/>}
+          {(Poster === 'N/A') && 
+            <div className="missing">
+              <span className="missing-fill">:(</span>
+            </div>
+          }
         </div>
+        
+        <div className="poster">
+          
+        </div>
+
         <div className="movie-description">
           <h3>{Title}</h3>
           <p>Rated: {Rated}</p>
