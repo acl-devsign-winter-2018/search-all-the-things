@@ -15,7 +15,7 @@ export const checkResponseData = data => {
 }
 
 export function search(term) { 
-  const url = `${URL}&s=${encodeURIComponent(term)}`;
+  const url = `${URL}`;
   return get(url);
 }
 

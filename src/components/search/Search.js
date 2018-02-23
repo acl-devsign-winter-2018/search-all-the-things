@@ -10,7 +10,7 @@ export default class Search extends Component {
     }
 
     componentDidMount() {
-        this.handleSearch('star wars')
+        this.handleSearch('star')
     }
 
     handleSearch = searchTerm => {
@@ -27,12 +27,21 @@ export default class Search extends Component {
 
 
     render () {
-        const { movies, error } = this.state;
 
         return(
             <div>
-            {/* <SearchForm onSearch={this.handleSearch}/> */}
-          </div>
-        );   
-    }    
+                <form className={styles.search} onSubmit={this.handleSubmit}>
+                    <fieldset>
+                        <div></div>
+                        <label> Enter your search here: 
+                        <input placeholder="enter movie title"/>
+                        </label>
+                        <button> Search </button>
+                    </fieldset>
+                </form>
+            </div>
+        )
+        
+    }   
+    
 }
