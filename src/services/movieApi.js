@@ -16,12 +16,13 @@ export const checkResponseData = data => {
 
 export function search(term) { 
   const url = `${BASE_URL}${encodeURIComponent(term)}${API_QUERY}`;
+  console.log(url)
   return get(url);
 }
 
-export function getMovie(id) {
-  const url = `${URL}&i=$id`
-}
+// export function getMovie(id) {
+//   const url = `${URL}&i=$id`
+// }
 
 
 
