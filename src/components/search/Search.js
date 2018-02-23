@@ -10,26 +10,29 @@ export default class Search extends Component {
     }
 
     componentDidMount() {
-        this.setState({ results: search('star')});
-        console.log(this.state.results)
+        this.handleSearch('star wars')
     }
 
+    handleSearch = searchTerm => {
+        this.setState({ error: null });
+
+        search(searchTerm)
+            .then(({ Search }) => {
+                this.setState({ movies: Search });
+            })
+            .catch(error => {
+                this.setState({ error });
+            });
+    };
+
+
     render () {
+        const { movies, error } = this.state;
 
         return(
             <div>
-                <form className={styles.search} onSubmit={this.handleSubmit}>
-                    <fieldset>
-                        <div></div>
-                        <label> Enter your search here: 
-                        <input placeholder="enter movie title"/>
-                        </label>
-                        <button> Search </button>
-                    </fieldset>
-                </form>
-            </div>
-        )
-        
-    }   
-    
+            {/* <SearchForm onSearch={this.handleSearch}/> */}
+          </div>
+        );   
+    }    
 }
