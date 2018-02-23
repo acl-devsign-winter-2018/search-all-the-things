@@ -5,11 +5,15 @@ import { Link } from 'react-router-dom';
 export default class Movie extends Component {
 
   static propTypes = {
-    movie: PropTypes.object.isRequired
+    imdbID: PropTypes.string,
+    Poster: PropTypes.string,
+    Title: PropTypes.string,
+    Year: PropTypes.string,
+    Type: PropTypes.string,
   };
 
   render() {
-    const { Title, Year, imdbID, Type, Poster } = this.props.movie;
+    const { Title, Year, imdbID, Type, Poster } = this.props;
 
     return (
       <li> 
