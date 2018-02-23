@@ -19,7 +19,7 @@ export default class App extends Component {
         search(this.state.topic)
             .then(response => {
                 this.setState({
-                    title: response.title
+                    title: response.Title
                 })
             })
 
