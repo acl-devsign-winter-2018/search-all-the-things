@@ -20,7 +20,7 @@ export default class DetailContainer extends Component {
 
       render() {
         const { searchDetail } = this.state;
-        console.log(name);
+
         if(searchDetail === null) return null;
   
         return <Details searchDetail={searchDetail}/>;

@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import SearchAll from './search/SearchAll';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Home from './home';
-import Details from './details/Details';
 import DetailContainer from './details/DetailContainer';
-
-
 
 
 export default class App extends Component {
@@ -22,9 +19,6 @@ export default class App extends Component {
       <Router>
         <div>
 
-          {/* <header>
-            <SearchAll/>
-          </header> */}
           <main>
             <Switch>
               <Route exact path="/" component={Home}/>
@@ -32,13 +26,10 @@ export default class App extends Component {
               <Route path="/search/:name" render={({ match }) => <DetailContainer name={match.params.name}/>}/>
               <Redirect to="/"/>
             </Switch>
-
           </main>
 
         </div>
       </Router>
-
     );
   }
-
 } 
