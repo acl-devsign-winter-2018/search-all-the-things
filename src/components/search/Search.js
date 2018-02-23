@@ -11,8 +11,6 @@ export default class Search extends Component {
         error: null
     }
 
-
-
     handleSearch = searchTerm => {
         this.setState({ error: null });
 
@@ -25,11 +23,14 @@ export default class Search extends Component {
             });
     };
 
-    // handleSubmit(event) {
+    // handleSubmit = (event) => {
     //     event.preventDefault();
-    //     return handleSearch();
-    // }
-
+    //     const { searchTerm } = this.state;
+    //     if(!searchTerm.trim()) return;
+    
+    //     this.props.onSearch(searchTerm);
+    // };
+    
 
     render () {
         const { movies, error } = this.state;
