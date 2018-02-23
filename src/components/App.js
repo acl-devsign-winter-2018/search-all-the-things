@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import './App.css';
 import Header from './header/Header';
 import Search from './search/Search';
-// import MovieDetail from './movies/MovieDetail';
+import MovieDetail from './movies/MovieDetail';
 // import Paging from './paging/Paging';
 // import Articles from './movies/Articles';
 // import { search } from '../services/omdbApi';
