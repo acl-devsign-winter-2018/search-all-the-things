@@ -1,6 +1,6 @@
-const BASE_URL = 'http://www.omdbapi.com/'
+const BASE_URL = 'http://www.omdbapi.com/?s='
 const API_KEY = 'ef6a96a7';
-// const API_QUERY = `&apikey=${API_KEY}`;
+const API_QUERY = `&apikey=${API_KEY}`;
 const URL = `${BASE_URL}/?apikey=${API_KEY}`
 
 
@@ -15,7 +15,7 @@ export const checkResponseData = data => {
 }
 
 export function search(term) { 
-  const url = `${URL}`;
+  const url = `${BASE_URL}${encodeURIComponent(term)}${API_QUERY}`;
   return get(url);
 }
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './Search.css';
 import { search } from '../../services/movieApi';
+import Movies from '../movies/Movies';
+import SearchForm from '../search/SearchForm';
 
 export default class Search extends Component {
 
@@ -25,21 +27,19 @@ export default class Search extends Component {
             });
     };
 
+    // handleSubmit(event) {
+    //     event.preventDefault();
+    //     return handleSearch();
+    // }
+
 
     render () {
+        const { movies, error } = this.state;
 
         return(
-            <div>
-                <form className={styles.search} onSubmit={this.handleSubmit}>
-                    <fieldset>
-                        <div></div>
-                        <label> Enter your search here: 
-                        <input placeholder="enter movie title"/>
-                        </label>
-                        <button> Search </button>
-                    </fieldset>
-                </form>
-            </div>
+         <div>
+             <SearchForm onSearch={this.handleSearch}/>
+        </div>
         )
         
     }   
