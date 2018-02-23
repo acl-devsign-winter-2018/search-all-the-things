@@ -11,7 +11,7 @@ export default class MovieDetail extends Component {
 
   state = {
     movie: null
-  }
+  };
 
   componentDidMount() {
     getMovie(this.props.imdbID)
@@ -25,7 +25,7 @@ export default class MovieDetail extends Component {
 
     return (
       <div>
-        <MovieItem movie={movie} />
+        <MovieItem {...movie} />
       </div>
     );
   }

@@ -5,11 +5,20 @@ import './Movie.css';
 export default class MovieItem extends Component {
 
   static propTypes = {
-    movie: PropTypes.object.isRequired
+    Title: PropTypes.string.isRequired,
+    Rated: PropTypes.string.isRequired,
+    Released: PropTypes.string.isRequired,
+    Runtime: PropTypes.string.isRequired,
+    Genre: PropTypes.string.isRequired,
+    Director: PropTypes.string.isRequired,
+    Writer: PropTypes.string.isRequired,
+    Actors: PropTypes.string.isRequired,
+    Poster: PropTypes.string.isRequired,
+    imdbRating: PropTypes.string.isRequired
   };
 
   render() {
-    const { Title, Rated, Released, Runtime, Genre, Director, Writer, Actors, Poster, imdbRating } = this.props.movie;
+    const { Title, Rated, Released, Runtime, Genre, Director, Writer, Actors, Poster, imdbRating } = this.props;
 
     return (
       <div className="movie-item">
