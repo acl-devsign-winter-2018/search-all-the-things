@@ -5,9 +5,7 @@ import SwList from '../swList';
 import Dropdown from './dropdown';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-
-
+import './search.css';
 
 
 export default class SearchAll extends Component {
@@ -31,9 +29,7 @@ export default class SearchAll extends Component {
       error: null
     });
   
-
     const { topic } = this.state; 
-
 
     search(topic, this.props.category).then(
       ({ results }) => 
@@ -45,7 +41,6 @@ export default class SearchAll extends Component {
       .then(() => {
         this.setState({ loading: false });
       });
-    
   }; 
   
   handleSearch = topic => {
@@ -53,7 +48,6 @@ export default class SearchAll extends Component {
   };
 
   
-
   render(){
     const { results, loading } = this.state;
     return (
@@ -68,7 +62,7 @@ export default class SearchAll extends Component {
         <div className="loading">{loading && 'Loading...'}</div>
       
         <div>
-          {results && <SwList results={results} category={this.state.category}/>}
+          {results && <SwList results={results} category={this.props.category}/>}
         </div>
           
       </div>

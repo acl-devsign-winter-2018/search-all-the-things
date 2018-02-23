@@ -7,15 +7,6 @@ export default class DropDown extends Component {
     dropDown: PropTypes.func
   };
 
-
-  // handleCategory(){
-  //   const { category } = this.state;
-  //   this.props.onSearch(category);
-  // }
-
-  
-  
-
   render(){
     return (
       <select onChange={this.props.dropDown}>
