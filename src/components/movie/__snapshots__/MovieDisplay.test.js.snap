@@ -4,12 +4,6 @@ exports[`MovieDisplay renders single movie in detail 1`] = `
 <div
   className="movie-detail"
 >
-  <Link
-    replace={false}
-    to="/"
-  >
-    New Search
-  </Link>
   <h2>
     Requiem for a Dream
   </h2>
