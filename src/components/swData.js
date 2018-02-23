@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './swData.css';
 
 export default class SwData extends Component {
 
@@ -16,7 +17,7 @@ export default class SwData extends Component {
 
       return (
         <li>
-          <Link to={`/search/${name ? name : title}` }>
+          <Link className='listItem' to={`/search/${name ? name : title}` }>
             { name ? name : title }
           </Link>
         </li>
