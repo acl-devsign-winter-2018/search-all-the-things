@@ -9,8 +9,8 @@ export default class App extends Component {
 
     state = {
         title: null,
-        // total: 0,
         topic: null,
+        results: [],
         page: 1,
         loading: false 
     }
@@ -19,7 +19,7 @@ export default class App extends Component {
         search(this.state.topic)
             .then(response => {
                 this.setState({
-                    title: response.Title
+                    results: response.Search
                 })
             })
 
@@ -35,7 +35,7 @@ export default class App extends Component {
 
 
     render() {
-        const { title } = this.state;
+        const { results } = this.state;
 
         return(
             <div>
@@ -46,7 +46,14 @@ export default class App extends Component {
                 <main>
                     <div>Search Summary</div>
                     <div>Paging goes here</div>
-                    <div>List goes here: {title ? title : 'no results'}
+                    <div>List goes here: 
+                        <ul>
+                            {results.map((movie, index) => {
+                                return <li key={index}>{movie.Title}{' '}{movie.Year}{' '}
+                                        <img src={movie.Poster}></img>
+                                        </li>
+                            })}
+                        </ul>
                     </div>
                 </main>
             </div>
