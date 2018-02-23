@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 // import './App.css';
 // import { search } from '../services/movieApi';
 import Search from '../search/Search';
-// import Articles from './Articles';
 
 
 export default class App extends Component {

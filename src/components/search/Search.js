@@ -11,9 +11,7 @@ export default class Search extends Component {
         error: null
     }
 
-    // componentDidMount() {
-    //     this.handleSearch('star')
-    // }
+
 
     handleSearch = searchTerm => {
         this.setState({ error: null });
@@ -40,7 +38,7 @@ export default class Search extends Component {
             <div>
                 <form className={styles.search} onSubmit={this.handleSubmit}>
                     <fieldset>
-                        <div></div>
+                        <div>{movies}</div>
                         <label> Enter your search here: 
                         <input placeholder="enter movie title"/>
                         </label>
