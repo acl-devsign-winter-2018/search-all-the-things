@@ -1,54 +1,31 @@
 import React, { Component } from 'react';
-import styles from './Search.css';
-import { search } from '../../services/movieApi';
-import Movies from '../movies/Movies';
-import SearchForm from '../search/SearchForm';
+import PropTypes from 'prop-types';
 
 export default class Search extends Component {
 
     state = {
-        movies: null,
-        error: null
+        search: '' //not the same as query up in app
     }
 
-    handleSearch = searchTerm => {
-        this.setState({ error: null });
+    handleSubmit(target) {
 
-        search(searchTerm)
-            .then(({ Search }) => {
-                this.setState({ movies: Search });
-            })
-            .catch(error => {
-                this.setState({ error });
-            });
-    };
+    }
 
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const { searchTerm } = this.state;
-    //     if(!searchTerm.trim()) return;
-    
-    //     this.props.onSearch(searchTerm);
-    // };
-    
+    handleChange =  ({ target }) => {
+        this.setState({ search: target.value });
+    }
 
     render () {
-        const { movies, error } = this.state;
-
-        return(
+        const { search } = this.state;
+        
+        return (
             <div>
-                <form className={styles.search} onSubmit={this.handleSubmit}>
-                    <fieldset>
-                        <div>{movies}</div>
-                        <label> Enter your search here: 
-                        <input placeholder="enter movie title"/>
-                        </label>
-                        <button> Search </button>
-                    </fieldset>
+                <form onSubmit={this.handleSubmit}>
+                <div>{search}</div>
+                <input value={search} onChange={this.handleChange}/>
+
                 </form>
             </div>
-            )
-        
-    }   
-    
+        );
+    }
 }
