@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import styles from './Search.css';
-import { searchApi } from '../../services/movieApi';
+import { search } from '../../services/movieApi';
 
 export default class Search extends Component {
 
+    state = {
+        movies: null,
+        error: null
+    }
 
     componentDidMount() {
-        this.setState({ results: searchApi('star')});
+        this.setState({ results: search('star')});
+        console.log(this.state.results)
     }
 
     render () {
