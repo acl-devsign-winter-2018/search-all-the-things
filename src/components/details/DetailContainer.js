@@ -6,7 +6,8 @@ import Details from './Details';
 export default class DetailContainer extends Component {
     
     static propTypes = {
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired
     };
   
       state = {
@@ -14,7 +15,7 @@ export default class DetailContainer extends Component {
       };
   
       componentDidMount(){
-        search(this.props.name)
+        search(this.props.name, this.props.category)
           .then(searchDetail => this.setState({ searchDetail }));
       }
 

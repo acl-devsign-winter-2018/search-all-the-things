@@ -8,9 +8,12 @@ import DetailContainer from './details/DetailContainer';
 export default class App extends Component {
 
   state = {
-    category: null,
-    topic: null,
-    error: null
+    category: 'people'
+  };
+
+  handleDropdown = ({ target }) => {
+    this.setState({ category: target.value.toLowerCase() });
+    
   };
 
   render(){
@@ -22,8 +25,8 @@ export default class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route exact path="/search" component={SearchAll}/>
-              <Route path="/search/:name" render={({ match }) => <DetailContainer name={match.params.name}/>}/>
+              <Route exact path="/search" render={ () => <SearchAll category={this.state.category} handleDropdown={this.handleDropdown}/>}/>
+              <Route path="/search/:name" render={({ match }) => <DetailContainer name={match.params.name} category={this.state.category}/>}/>
               <Redirect to="/"/>
             </Switch>
           </main>

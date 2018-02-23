@@ -4,15 +4,16 @@ import SwData from './swData';
 
 export default class swList extends Component {
     static propTypes = {
-      results: PropTypes.array.isRequired
+      results: PropTypes.array.isRequired,
+      category: PropTypes.string.isRequired
     };
 
     render(){
-      const { results } = this.props;
+      const { results, category } = this.props;
 
       return (
         <ul>
-          {results.map(data => <SwData key = {data.name} {...data}/>)}
+          {results.map((data, i) => <SwData key = {i} {...data} category={category}/>)}
         </ul>
       );
     }

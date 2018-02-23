@@ -4,6 +4,7 @@ import Search from './search';
 import SwList from '../swList';
 import Dropdown from './dropdown';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 
@@ -11,8 +12,13 @@ import { Link } from 'react-router-dom';
 
 export default class SearchAll extends Component {
 
+  static propTypes = {
+    category: PropTypes.string,
+    handleDropdown: PropTypes.func      
+    
+  };
+
   state = {
-    category: null,
     topic: null,
     error: null
   };
@@ -22,13 +28,14 @@ export default class SearchAll extends Component {
     this.setState({
       results: null,
       loading: true,
-      error: null,
+      error: null
     });
   
 
     const { topic } = this.state; 
 
-    search(topic).then(
+
+    search(topic, this.props.category).then(
       ({ results }) => 
       { this.setState({ results });
       },
@@ -45,10 +52,7 @@ export default class SearchAll extends Component {
     this.setState({ topic }, this.searchSWAPI);
   };
 
-  handleDropdown  = category => {
-    this.setState({ category });
-  };
-
+  
 
   render(){
     const { results, loading } = this.state;
@@ -59,12 +63,12 @@ export default class SearchAll extends Component {
           <Search onSearch={this.handleSearch}/>
         </header>
         <div>
-          <Dropdown onChange={this.handleDropdown}/>
+          <Dropdown dropDown={ this.props.handleDropdown }/>
         </div>
         <div className="loading">{loading && 'Loading...'}</div>
       
         <div>
-          {results && <SwList results={results}/>}
+          {results && <SwList results={results} category={this.state.category}/>}
         </div>
           
       </div>
