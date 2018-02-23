@@ -7,12 +7,10 @@ import { Link } from 'react-router-dom';
 export default class Details extends Component {
     
   static propTypes = {
-    name: PropTypes.string.isRequired
+    searchDetail: PropTypes.object.isRequired
   };
 
-   state = {
-     searchDetail: null
-   };
+  
 
   // componentDidMount(){
   //   search(this.props.name)
@@ -20,8 +18,9 @@ export default class Details extends Component {
   // }
 
    render() {
-     const { searchDetail } = this.state;
+     const { searchDetail } = this.props;
 
+    
      if(searchDetail === null) return null;
 
      return (
