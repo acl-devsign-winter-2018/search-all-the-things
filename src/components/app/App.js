@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
+import Movies from '../movies/Movies';
 import { search } from '../../services/movieApi';
 import Search from '../search/Search';
 
@@ -46,19 +47,16 @@ export default class App extends Component {
                 <main>
                     <div>Search Summary</div>
                     <div>Paging goes here</div>
-                    <div>List goes here: 
-                        <ul>
-                            {results.map((movie, index) => {
-                                return <li key={index}>{movie.Title}
-                                        <p>{movie.Year}</p>
-                                        <p><img src={movie.Poster}></img></p>
-                                        </li>
-                            })}
-                        </ul>
-                    </div>
+                    <div>List goes here: </div>
+
+                    {results && (
+                        <div>
+                            <Movies results={results}/>
+                        </div>
+                    )}
                 </main>
             </div>
-        )
+        );
         
     }
 }

@@ -12,8 +12,8 @@ export default class Movie extends Component {
 
     render() {
 
-        const { imdbID, Poster, Title, Year } = this.props;
-
+        const { imdbID, Poster, Title, Year } = this.props.movie;
+        console.log(imdbID, Poster, Title, Year)
         return (
             <li>
                 <h3>{Title}</h3>
