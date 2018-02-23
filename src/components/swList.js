@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SwData from './swData';
+import SwData from './SwData';
 
 export default class swList extends Component {
     static propTypes = {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { search } from '../../services/starWarsApi.js';
-import Search from './search';
-import SwList from '../swList';
-import Dropdown from './dropdown';
+import Search from './Search';
+import SwList from '../SwList';
+import Dropdown from './Dropdown';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './search.css';
