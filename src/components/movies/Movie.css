@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .movie-item {
   display: flex;
   margin: 4rem 0 0;
@@ -12,6 +14,19 @@
 .poster {
   width: 300px;
   margin: 2rem;
+}
+
+.missing {
+  width: 100%;
+  height: 20%;
+}
+
+.missing-fill {
+  display: block;
+  background: $black;
+  color: $white;
+  font-size: 4rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 700px) {
