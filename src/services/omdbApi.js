@@ -25,4 +25,8 @@ export function getMovie(id) {
   return get(url);
 }
 
+//search sample link
 //http://www.omdbapi.com/?s=batman&apikey=f7ebe991
+
+//search sample movie detail
+//http://www.omdbapi.com/?apikey=f7ebe991&i=tt0372784
