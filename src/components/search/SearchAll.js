@@ -13,7 +13,6 @@ export default class SearchAll extends Component {
   static propTypes = {
     category: PropTypes.string,
     handleDropdown: PropTypes.func      
-    
   };
 
   state = {

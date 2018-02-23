@@ -13,7 +13,7 @@ export default class SwData extends Component {
     };
 
     render(){
-      const { name,  title } = this.props;
+      const { name, title } = this.props;
 
       return (
         <li>

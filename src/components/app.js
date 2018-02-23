@@ -13,11 +13,9 @@ export default class App extends Component {
 
   handleDropdown = ({ target }) => {
     this.setState({ category: target.value.toLowerCase() });
-    
   };
 
   render(){
-   
     return (
       <Router>
         <div>
