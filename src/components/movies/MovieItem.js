@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Movie.css';
 
 export default class MovieItem extends Component {
 
@@ -11,11 +12,11 @@ export default class MovieItem extends Component {
     const { Title, Rated, Released, Runtime, Genre, Director, Writer, Actors, Poster, imdbRating } = this.props.movie;
 
     return (
-      <div>
-        <div>
+      <div className="movie-item">
+        <div className="poster">
           <img src={Poster}/>
         </div>
-        <div>
+        <div className="movie-description">
           <h3>{Title}</h3>
           <p>Rated: {Rated}</p>
           <p>Film Released: {Released}</p>

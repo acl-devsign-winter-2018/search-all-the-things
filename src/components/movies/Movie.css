@@ -1,0 +1,21 @@
+.movie-item {
+  display: flex;
+  margin: 4rem 0 0;
+  flex-direction: column;
+}
+
+.movie-description {
+  text-align: left;
+  margin: 0 1rem;
+}
+
+.poster {
+  width: 300px;
+  margin: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  .movie-item {
+    flex-direction: row;
+  }
+}

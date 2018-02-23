@@ -11,7 +11,7 @@ export default class Header extends Component {
           <ul className={styles.navlist}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/search">Search</Link></li>
-            <Route path="/movies" render={() => <li>only on movies!</li>}/>
+            <Route path="/movies" render={() => <li>~</li>}/>
           </ul>
         </nav>
       </header>

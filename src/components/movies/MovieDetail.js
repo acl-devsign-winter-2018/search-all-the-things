@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getMovie } from '../../services/omdbApi';
-import { Link } from 'react-router-dom';
 import MovieItem from './MovieItem';
 
 export default class MovieDetail extends Component {
@@ -17,8 +16,6 @@ export default class MovieDetail extends Component {
   componentDidMount() {
     getMovie(this.props.imdbID)
       .then(movie => this.setState({ movie }));
-
-    console.log(getMovie);
   }
 
   render() {
@@ -28,7 +25,6 @@ export default class MovieDetail extends Component {
 
     return (
       <div>
-        <Link to="/search">New Search</Link>
         <MovieItem movie={movie} />
       </div>
     );

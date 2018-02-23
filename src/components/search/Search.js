@@ -86,6 +86,12 @@ export default class Search extends Component {
               onNext={this.handleNext}/>
 
             <Movies movies={movies}/>
+
+            <Paging totalResults={totalResults}
+              page={page} 
+              perPage={PAGE_SIZE} 
+              onPrev={this.handlePrev} 
+              onNext={this.handleNext}/>
           </div>
         )}
       </div>
