@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './home.css';
 
 export default class Home extends Component {
 
   render(){
     return (
-      <div>
-        <h1>WELCOME TO STAR WARS SEARCH</h1>
-        <Link to={'/search'}>Search</Link>
+      <div className='homeDiv'>
+        <Link className='link' to={'/search'}>Search The Universe</Link>
       </div>
     );
     
