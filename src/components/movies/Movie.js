@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './movie.css';
+import './Movie.css';
 
 export default class Movie extends Component {
 

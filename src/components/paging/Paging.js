@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class Paging extends Component {
 
   static propTypes = {
-    totalResults: PropTypes.number.isRequired,
+    totalResults: PropTypes.string.isRequired,
     page: PropTypes.number.isRequired,
     perPage: PropTypes.number.isRequired,
     onPrev: PropTypes.func.isRequired,

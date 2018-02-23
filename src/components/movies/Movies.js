@@ -13,7 +13,7 @@ export default class Movies extends Component {
 
     return (
       <ul className="result-grid">
-        {movies.map(movie => <Movie key={movie.imdbID} {...movie}/>)}
+        {movies.map((movie, index) => <Movie key={movie.imdbID + index.toString()} {...movie}/>)}
       </ul>
     );
   }
