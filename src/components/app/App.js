@@ -17,10 +17,12 @@ export default class App extends Component {
     }
 
     searchMovies () {
-        search(this.state.topic)
+        const { topic, page } = this.state;
+        search(topic, page)
             .then(response => {
                 this.setState({
-                    results: response.Search
+                    results: response.Search,
+                    totalResults: response.totalResults
                 })
             })
 
