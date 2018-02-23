@@ -49,8 +49,9 @@ export default class App extends Component {
                     <div>List goes here: 
                         <ul>
                             {results.map((movie, index) => {
-                                return <li key={index}>{movie.Title}{' '}{movie.Year}{' '}
-                                        <img src={movie.Poster}></img>
+                                return <li key={index}>{movie.Title}
+                                        <p>{movie.Year}</p>
+                                        <p><img src={movie.Poster}></img></p>
                                         </li>
                             })}
                         </ul>
