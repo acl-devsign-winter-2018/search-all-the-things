@@ -37,6 +37,7 @@ export default class App extends Component {
     }
 
     handleNext = () => this.handlePaging(1);
+    handlePrev = () => this.handlePaging(-1);
 
     handlePaging = incr => {
         this.setState(
@@ -61,6 +62,8 @@ export default class App extends Component {
                     <div>List goes here: </div>
 
                     <button onClick={this.handleNext} >Next page</button>
+                    <button onClick={this.handlePrev} >Previous page</button>
+
 
                     {results && (
                         <div>
