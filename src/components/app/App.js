@@ -5,6 +5,7 @@ import Movies from '../movies/Movies';
 import { search } from '../../services/movieApi';
 import Search from '../search/Search';
 
+const PAGE_SIZE = 10;
 
 export default class App extends Component {
 
@@ -48,7 +49,9 @@ export default class App extends Component {
 
 
     render() {
-        const { results, topic, totalResults } = this.state;
+        const { results, topic, page, totalResults } = this.state;
+
+        const ofXPages = totalResults/10;
 
         return(
             <div>
@@ -56,8 +59,11 @@ export default class App extends Component {
                     <Search onSearch={this.handleSearch}/>
                 </header>
                 <main>
-                    <p>Total results: {totalResults}</p>
+                    
                     <h4>Search for &quot;{topic}&quot; found {totalResults} matches</h4>
+                    <div> This is page {page} of {ofXPages}</div>
+
+
                     <div>Paging goes here
                     <button onClick={this.handlePrev} >Previous page</button>
                     <button onClick={this.handleNext} >Next page</button>
