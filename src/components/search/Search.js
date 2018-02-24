@@ -36,7 +36,7 @@ export default class Search extends Component {
                 <input name="search" value={search} onChange={this.handleChange}/>
 
                 <button>Search</button>
-                <pre>{JSON.stringify(this.state, true, 2)}</pre>
+                {/* <pre>{JSON.stringify(this.state, true, 2)}</pre> */}
                 </label>
                 </form>
             </div>

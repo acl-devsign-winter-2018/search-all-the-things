@@ -48,22 +48,20 @@ export default class App extends Component {
 
 
     render() {
-        const { results } = this.state;
+        const { results, topic, totalResults } = this.state;
 
         return(
             <div>
                 <header>
                     <Search onSearch={this.handleSearch}/>
-                    Search goes here
                 </header>
                 <main>
-                    <div>Search Summary</div>
-                    <div>Paging goes here</div>
-                    <div>List goes here: </div>
-
-                    <button onClick={this.handleNext} >Next page</button>
+                    <p>Total results: {totalResults}</p>
+                    <h4>Search for &quot;{topic}&quot; found {totalResults} matches</h4>
+                    <div>Paging goes here
                     <button onClick={this.handlePrev} >Previous page</button>
-
+                    <button onClick={this.handleNext} >Next page</button>
+                    </div>
 
                     {results && (
                         <div>
