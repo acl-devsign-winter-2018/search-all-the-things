@@ -36,6 +36,15 @@ export default class App extends Component {
         })
     }
 
+    handleNext = () => this.handlePaging(1);
+
+    handlePaging = incr => {
+        this.setState(
+        prev => ({ page: prev.page + incr }),
+        this.searchMovies 
+        );
+    } 
+
 
     render() {
         const { results } = this.state;
@@ -50,6 +59,8 @@ export default class App extends Component {
                     <div>Search Summary</div>
                     <div>Paging goes here</div>
                     <div>List goes here: </div>
+
+                    <button onClick={this.handleNext} >Next page</button>
 
                     {results && (
                         <div>
