@@ -19,12 +19,18 @@ export default class App extends Component {
 
     searchMovies () {
         const { topic, page } = this.state;
+
+        this.setState({ loading: true, error: null });
+
         search(topic, page)
             .then(response => {
                 this.setState({
                     results: response.Search,
                     totalResults: response.totalResults
                 })
+            })
+            .then(() => {
+                this.setState({ loading: false })
             })
 
             //TODO
@@ -49,9 +55,9 @@ export default class App extends Component {
 
 
     render() {
-        const { results, topic, page, totalResults } = this.state;
+        const { loading, results, topic, page, totalResults } = this.state;
 
-        const ofXPages = totalResults/10;
+        const ofXPages = Math.ceil(totalResults/10);
 
         return(
             <div>
@@ -62,8 +68,7 @@ export default class App extends Component {
                     
                     <h4>Search for &quot;{topic}&quot; found {totalResults} matches</h4>
                     <div> This is page {page} of {ofXPages}</div>
-
-
+                    <div>{loading && 'Loading...'}</div>
                     <div>Paging goes here
                     <button onClick={this.handlePrev} >Previous page</button>
                     <button onClick={this.handleNext} >Next page</button>
