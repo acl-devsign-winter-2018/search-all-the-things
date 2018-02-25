@@ -32,23 +32,24 @@ export default class App extends Component {
       );
   };
 
-  handleSearch = subject => {
-    this.setState({ subject }, () => {
-      this.searchBooks();
-    });
+  handleSearch = search => {
+    this.setState(search, this.searchBooks);
   };
 
   render() {
     const { subject, totalItems } = this.state;
     return (
       <div className={styles.app}>
+
         <header>
           <h1>Find Your Next Favorite Book</h1>
         </header>
+
         <Search onSearch={this.handleSearch}/>
+        
         <main>
           <div>{totalItems} books about {subject}</div>
-          <div>Book will go here</div>
+          <div>Books will go here</div>
           <div>Paging will go here</div>
         </main>
 

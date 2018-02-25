@@ -7,17 +7,20 @@ export default class Book extends Component {
     item: PropTypes.object.isRequired,
     author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-
+    publishedDate: PropTypes.string,
+    description: PropTypes.string,
+    thumbnail: PropTypes.string,
+    selfLink: PropTypes.string
   };
 
   render() {
-    const { title, author, publishedOn, description, url, image } = this.props.book;
+    const { title, author, publishedDate, description, thumbnail, selfLink } = this.props.item;
 
     return (
       <li>
-        <a href={url}>
+        <a href={selfLink}>
           <h2>{title} by {author}</h2>
-          <img src={image}/>
+          <img src={thumbnail}/>
           <p className="published"/>
           <p>{description}</p>
         </a>
