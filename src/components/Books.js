@@ -4,7 +4,7 @@ import Book from './Book';
 
 export default class Books extends Component {
   static propTypes = {
-    articles: PropTypes.array.isRequired
+    books: PropTypes.array.isRequired
   };
 
   render() { 

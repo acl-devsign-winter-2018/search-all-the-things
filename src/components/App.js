@@ -1,40 +1,47 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './App.css';
+import styles from './App.css';
 import Search from './Search';
+import { search } from '../services/booksApi';
 
 export default class App extends Component {
 
   state = {
-    results: null,
+    books: null,
     total: 0,
-    query: null,
+    subject: null,
     page: 1,
     loading: false
   };
 
   searchBooks() {
-    
+    search(this.state.subject)
+      .then(response => {
+        this.setState({
+          books: response.items, //cannot read property items of undefined. 
+          total: response.totalItems
+        });
+      })
+      .catch(err => console.log(err));
   }
 
-  handleSearch = search => {
-    this.setState({ search }).then(() => {
+  handleSearch = (subject) => {
+    this.setState({ subject }, () => {
       this.searchBooks();
     });
   };
 
   render() {
-    const { results, total, query, page } = this.state;
+    const { books, total, subject, page } = this.state;
     return (
-      <div>
+      <div className={styles.app}>
         <header>
           <h1>Find Your Next Favorite Book</h1>
         </header>
-        <h1>Search here</h1>
+        <Search onSearch={this.handleSearch}/>
         <main>
-          <div>Search Summary</div>
-          <div>Paging</div>
-          <div>list</div>
+          <div>{total}</div>
+          <div>{books}</div>
+          <div>Number of Books: {total}</div>
         </main>
 
       </div>

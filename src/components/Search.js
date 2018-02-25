@@ -9,28 +9,28 @@ export default class Search extends Component {
   };
 
   state = {
-    search: ''
+    subject: ''
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { search } = this.state;
-    if(!search.trim()) return;
-    this.props.onSearch(search);
+    const { subject } = this.state;
+    if(!subject.trim()) return;
+    this.props.onSearch(subject);
   };
 
   handleChange = ({ target }) => {
-    this.setState({ search: target.value });
+    this.setState({ subject: target.value });
   };
 
   render() {
 
-    const { search } = this.state;
+    const { subject } = this.state;
     return (
       <form className={styles.search} onSubmit={this.handleSubmit}>
         <label>
           Search for books:
-          <input name="search" value={search} onChange={this.handleChange}/>
+          <input value={subject} onChange={this.handleChange}/>
         </label>
         <button>Search</button>
 
