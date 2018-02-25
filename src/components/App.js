@@ -24,8 +24,8 @@ export default class App extends Component {
 
     search(subject)
       .then(
-        ({ items, totalItems }) => { // how/where to I extract the things from the google api response here?? 
-          this.setState({ items, totalItems });
+        ({ items, totalItems }) => {  
+          this.setState({ items, totalItems, loading: false });
         }), 
     error => this.setState({ error })
       .then(
@@ -38,7 +38,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { subject, totalItems, items } = this.state;
+    const { subject, totalItems, items, loading } = this.state;
     return (
       <div className={styles.app}>
 
@@ -49,9 +49,14 @@ export default class App extends Component {
         <Search onSearch={this.handleSearch}/>
         
         <main>
-          {items && <h2 className="total">{totalItems} books about {subject}</h2>}
-          {items && <Books items={items}/>}
-          <div>Paging will go here</div>
+          <div>{loading && <img src="https://media.giphy.com/media/l0HlSF89is7bCAjte/giphy.gif"/>}</div>
+          {items && (
+            <div>
+              <h2 className="total">{totalItems} books about {subject}</h2>
+              <Books items={items}/>
+              <div>Paging will go here</div>
+            </div>
+          )}
         </main>
 
       </div>

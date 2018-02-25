@@ -14,7 +14,7 @@ export default class Book extends Component {
     const { selfLink } = this.props.book;
     return (
       <li>
-        <a href={selfLink}> 
+        <a href={selfLink} target="_blank"> 
           <h2>{title} by {authors}</h2>
           <img src={thumbnail}/> 
           <p className="published"> Published on {publishedDate} </p>
