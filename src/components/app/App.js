@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styles from './App.css';
-import Search from './Search';
-import { search } from '../services/booksApi';
-import Books from './Books';
-import Paging from './Paging';
+import Search from '../search/Search';
+import { search } from '../../services/booksApi';
+import Books from '../books/Books';
+import Paging from '../paging/Paging';
 
 export default class App extends Component {
 
