@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './App.css';
 import Search from './Search';
 import { search } from '../services/booksApi';
+import Books from './Books';
 
 export default class App extends Component {
 
@@ -14,7 +15,7 @@ export default class App extends Component {
   };
 
   searchBooks = () => {
-    const { subject, items, totalItems } = this.state;
+    const { subject } = this.state;
 
     this.setState({ 
       loading: true, 
@@ -37,7 +38,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { subject, totalItems } = this.state;
+    const { subject, totalItems, items } = this.state;
     return (
       <div className={styles.app}>
 
@@ -49,7 +50,7 @@ export default class App extends Component {
         
         <main>
           <div>{totalItems} books about {subject}</div>
-          <div>Books will go here</div>
+          {items && <Books items={items}/>}
           <div>Paging will go here</div>
         </main>
 
