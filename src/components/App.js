@@ -1,47 +1,43 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './App.css';
+import Search from './Search';
 
 export default class App extends Component {
 
   state = {
-    count: 1
+    results: null,
+    total: 0,
+    query: null,
+    page: 1,
+    loading: false
   };
 
-  handleMore = () => {
-    this.setState({
-      count: this.state.count + 1
+  searchBooks() {
+    
+  }
+
+  handleSearch = search => {
+    this.setState({ search }).then(() => {
+      this.searchBooks();
     });
   };
 
   render() {
-    const { count } = this.state;
+    const { results, total, query, page } = this.state;
     return (
       <div>
-        <h1>Learning React Components</h1>
-        <button onClick={this.handleMore}>More!</button>
-        <A number={count}/>
-        <B/>
+        <header>
+          <h1>Find Your Next Favorite Book</h1>
+        </header>
+        <h1>Search here</h1>
+        <main>
+          <div>Search Summary</div>
+          <div>Paging</div>
+          <div>list</div>
+        </main>
+
       </div>
     );
-  }
-}
-
-class A extends Component {
-
-  constructor() {
-    super();
-    console.log('A is initializing');
-  }
-
-  render() {
-    console.log('A is rendering');
-    const { number } = this.props;
-    return <div>I am an instance of A, my number is {number}</div>;
-  }
-}
-
-class B extends Component {
-
-  render() {
-    return <div>I am an instance of B</div>;
   }
 }
