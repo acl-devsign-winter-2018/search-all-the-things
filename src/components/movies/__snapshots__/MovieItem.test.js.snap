@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Item renders movie item 1`] = `
+<div
+  className="movie-item"
+>
+  <div
+    className="poster"
+  >
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/M/MV5BYzc4ODgyZmYtMGFkZC00NGQyLWJiMDItMmFmNjJiZjcxYzVmXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg"
+    />
+  </div>
+  <div
+    className="movie-description"
+  >
+    <h3>
+      Batman Begins
+    </h3>
+    <p>
+      Rated: 
+      PG-13
+    </p>
+    <p>
+      Film Released: 
+      15 Jun 2005
+    </p>
+    <p>
+      Runtime: 
+      140 min
+    </p>
+    <p>
+      Genre: 
+      Action, Adventure, Thriller
+    </p>
+    <p>
+      Director: 
+      Christopher Nolan
+    </p>
+    <p>
+      Writers: 
+      Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)
+    </p>
+    <p>
+      Actors: 
+      Christian Bale, Michael Caine, Liam Neeson, Katie Holmes
+    </p>
+    <p>
+      IMDB Rating: 
+      8.3
+    </p>
+  </div>
+</div>
+`;

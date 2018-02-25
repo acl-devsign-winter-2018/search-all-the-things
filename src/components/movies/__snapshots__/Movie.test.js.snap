@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie renders movie detail 1`] = `
+<li>
+  <Link
+    replace={false}
+    to="/movies/tt0076759"
+  >
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+    />
+    <h3>
+      Star Wars: Episode IV - A New Hope
+    </h3>
+    <p>
+      Year made: 
+      1997
+    </p>
+    <p>
+      Movie
+       | IMDB ID: 
+      tt0076759
+    </p>
+  </Link>
+</li>
+`;
