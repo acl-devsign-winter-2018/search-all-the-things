@@ -11,7 +11,8 @@ module.exports = {
     filename: 'bundle.[hash].js',
   },
   devServer: {
-    contentBase: './build',
+    contentBase: './${buildDir}',
+    historyApiFallback: true,
   },
   devtool: 'inline-source-map',
   plugins: [

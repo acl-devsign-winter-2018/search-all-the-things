@@ -1,4 +1,4 @@
-@import './variables.css';
+@import '../variables.css';
 
 #container {
   min-height: 100vh;
@@ -9,22 +9,29 @@
   "footer";
   grid-template-rows: auto 1fr auto;
   hyphens: auto;
+  font-size: $fluidFontSize;
 }
 #main { grid-area: main; } 
 #footer { grid-area: footer; }
 #header { grid-area: header; }
 
 #header {
-  background: #D7F4EC;
-  color: #81AA9F;
+  background: $light-green;
+  color: $dark-green;
   padding: .5rem;
   h1 {
     font-size: 1.5rem;
   }
+  a {
+    color: $dark-green;
+    margin-right: 1rem;
+  }
 }
 #main {
-  width: 80%;
-  margin: 0 auto;
+  #sections{
+    width: 80%;
+    margin: 0 auto;
+  }
   button {
     font-family: Georgia, "Times New Roman", Times, serif;
     background: rgba(255,255,255,.1);
@@ -36,10 +43,13 @@
     padding: .7rem;
     width: 100%;
     box-sizing: border-box; 
-    background-color: #D7F4EC;
+    background-color: $light-green;
     color:#8a97a0;
     box-shadow: 0 .2rem 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 1.5rem;
+    &:hover{
+      cursor:pointer;
+    }
     &:disabled {
       background-color: #e8eeef;
     }
@@ -58,11 +68,15 @@
   background: rgba(255, 255, 255, 0.4);
   position: absolute;
   z-index: 100;
+  img{
+    width: 250px;
+    margin: 8rem auto;
+  }
 }
 
 #footer {
-  background: #81AA9F;
-  color: #D7F4EC;
+  background: $dark-green;
+  color: $light-green;
   text-align: center;
   padding: .5rem;
   ul {
@@ -72,7 +86,7 @@
     li {
       margin: .3rem .5rem;
       a {
-        color: #D7F4EC;
+        color: $light-green;
         display: flex;
         flex-direction: column;
       }

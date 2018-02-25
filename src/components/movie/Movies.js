@@ -15,7 +15,7 @@ export default class Movies extends Component {
     return (
       <ul id="movies">
         {movies.map((movie, index) => (
-          <Movie key={index} movie={movie}/>
+          <Movie key={index} {...movie}/>
         ))}
       </ul>
     );
