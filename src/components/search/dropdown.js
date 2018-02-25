@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 export default class DropDown extends Component {
 
-
-  handleCategory(){
-
-  }
+  static propTypes = {
+    dropDown: PropTypes.func
+  };
 
   render(){
     return (
-      <select onChange={this.handleCategory}>
+      <select onChange={this.props.dropDown}>
         <option>People</option>
         <option>Films</option>
         <option>Planets</option>

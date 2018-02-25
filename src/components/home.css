@@ -1,0 +1,30 @@
+body{
+    /*background image source https://rischmoller.files.wordpress.com/2012/01/star-wars.jpg?w=551 */
+    text-align: center;
+    background-image: url('../img/star-wars.jpg');
+    background-color: #0a0700;
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    font-size: 25px
+}
+
+.link, .visited {
+    margin-top: 250px;
+    background-color: #3d3433;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+.homeDiv{
+    margin-top: 10%;
+}
+
+ul{
+    list-style: none
+}

@@ -1,68 +1,36 @@
 import React, { Component } from 'react';
-import { search } from '../services/starWarsApi.js';
-import Search from './search';
-import SwList from './swList';
-import Dropdown from './dropdown';
-
-
+import SearchAll from './search/SearchAll';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Home from './Home';
+import DetailContainer from './details/DetailContainer';
 
 
 export default class App extends Component {
 
   state = {
-    category: null,
-    topic: null,
-    error: null
+    category: 'people'
   };
 
-
-  searchSWAPI = () => {
-    this.setState({
-      results: null,
-      loading: true,
-      error: null,
-    });
-  
-
-    const { topic } = this.state; 
-
-    search(topic).then(
-      ({ results }) => 
-      { this.setState({ results });
-      },
-      error => {
-        this.setState({ error, results: null });
-      })
-      .then(() => {
-        this.setState({ loading: false });
-      });
-    
-  }; 
-  
-  handleSearch = topic => {
-    this.setState({ topic }, this.searchSWAPI);
+  handleDropdown = ({ target }) => {
+    this.setState({ category: target.value.toLowerCase() });
   };
-
 
   render(){
-    const { results, loading } = this.state;
     return (
-      <div>
-        <header>
-          <Search onSearch={this.handleSearch}/>
-        </header>
+      <Router>
         <div>
-          <Dropdown/>
-        </div>
-        <div className="loading">{loading && 'Loading...'}</div>
-      
-        <div>
-          {results && <SwList results={results}/>}
-        </div>
-          
-      </div>
 
+          <main>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/search" render={ () => <SearchAll category={this.state.category} handleDropdown={this.handleDropdown}/>}/>
+              <Route path="/search/:name" render={({ match }) => <DetailContainer name={match.params.name} category={this.state.category}/>}/>
+              <Redirect to="/"/>
+            </Switch>
+          </main>
+
+        </div>
+      </Router>
     );
   }
-
 } 
