@@ -4,8 +4,8 @@ const API_KEY = 'AIzaSyCnNP1g1nyTkcW6BjorD93gN-ueMhUWg0I';
 export function search(subject) {
   const url = `${URL}${subject}&orderBy=newest&key=${API_KEY}`;
   return fetch(url).then(response => {
-    response.json();
-    console.log(response);
+    response = response.json();
+    return response;
   });
   
 }

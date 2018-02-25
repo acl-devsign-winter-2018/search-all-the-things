@@ -4,15 +4,15 @@ import Book from './Book';
 
 export default class Books extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired
   };
 
   render() { 
-    const { books } = this.props;
+    const { items } = this.props;
 
     return (
       <ul>
-        {books.map((book, i) => {
+        {items.map((book, i) => {
           <Book key={i} book={book}/>;
         })}
       </ul>

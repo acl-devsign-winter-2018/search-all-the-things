@@ -16,7 +16,7 @@ export default class Search extends Component {
     event.preventDefault();
     const { subject } = this.state;
     if(!subject.trim()) return;
-    this.props.onSearch(subject);
+    this.props.onSearch({ ...this.state });
   };
 
   handleChange = ({ target }) => {

@@ -6,32 +6,40 @@ import { search } from '../services/booksApi';
 export default class App extends Component {
 
   state = {
-    books: null,
-    total: 0,
+    items: null,
+    totalItems: 0,
     subject: null,
     page: 1,
     loading: false
   };
 
-  searchBooks() {
-    search(this.state.subject)
-      .then(response => {
-        this.setState({
-          books: response.items, //cannot read property items of undefined. 
-          total: response.totalItems
-        });
-      })
-      .catch(err => console.log(err));
-  }
+  searchBooks = () => {
+    const { subject, items, totalItems } = this.state;
 
-  handleSearch = (subject) => {
+    this.setState({ 
+      loading: true, 
+      error: null
+    });
+
+    search(subject)
+      .then(
+        ({ items, totalItems }) => { // how/where to I extract the things from the google api response here?? 
+          this.setState({ items, totalItems });
+        }), 
+    error => this.setState({ error })
+      .then(
+        this.setState({ loading: false })
+      );
+  };
+
+  handleSearch = subject => {
     this.setState({ subject }, () => {
       this.searchBooks();
     });
   };
 
   render() {
-    const { books, total, subject, page } = this.state;
+    const { subject, totalItems } = this.state;
     return (
       <div className={styles.app}>
         <header>
@@ -39,9 +47,9 @@ export default class App extends Component {
         </header>
         <Search onSearch={this.handleSearch}/>
         <main>
-          <div>{total}</div>
-          <div>{books}</div>
-          <div>Number of Books: {total}</div>
+          <div>{totalItems} books about {subject}</div>
+          <div>Book will go here</div>
+          <div>Paging will go here</div>
         </main>
 
       </div>

@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 export default class Book extends Component {
 
   static propTypes = {
-    book: PropTypes.object.isRequired,
+    item: PropTypes.object.isRequired,
     author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    
+
   };
 
   render() {
