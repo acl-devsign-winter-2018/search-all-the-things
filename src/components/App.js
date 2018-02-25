@@ -49,7 +49,7 @@ export default class App extends Component {
         <Search onSearch={this.handleSearch}/>
         
         <main>
-          <div>{totalItems} books about {subject}</div>
+          {items && <h2 className="total">{totalItems} books about {subject}</h2>}
           {items && <Books items={items}/>}
           <div>Paging will go here</div>
         </main>

@@ -32,7 +32,7 @@ export default class Search extends Component {
           Search for books:
           <input value={subject} onChange={this.handleChange}/>
         </label>
-        <button>Search</button>
+        <button>Find</button>
 
       </form>
     );
