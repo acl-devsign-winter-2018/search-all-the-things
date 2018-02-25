@@ -3,6 +3,7 @@ import styles from './App.css';
 import Search from './Search';
 import { search } from '../services/booksApi';
 import Books from './Books';
+import Paging from './Paging';
 
 export default class App extends Component {
 
@@ -11,18 +12,19 @@ export default class App extends Component {
     totalItems: 0,
     subject: null,
     page: 1,
-    loading: false
+    loading: false,
+    startIndex: 0 
   };
 
   searchBooks = () => {
-    const { subject } = this.state;
+    const { subject, startIndex } = this.state;
 
     this.setState({ 
       loading: true, 
       error: null
     });
 
-    search(subject)
+    search(subject, startIndex)
       .then(
         ({ items, totalItems }) => {  
           this.setState({ items, totalItems, loading: false });
@@ -37,8 +39,20 @@ export default class App extends Component {
     this.setState(search, this.searchBooks);
   };
 
+  handlePrev = () => this.handlePaging(-1, -10);
+  handleNext = () => this.handlePaging(1, 10);
+
+  handlePaging = (incr, indexChange) => {
+    this.setState(prev => ({ 
+      page: prev.page + incr, 
+      startIndex: prev.startIndex + indexChange 
+    }),
+    this.searchBooks
+    );
+  };
+
   render() {
-    const { subject, totalItems, items, loading } = this.state;
+    const { subject, totalItems, items, loading, page } = this.state;
     return (
       <div className={styles.app}>
 
@@ -54,7 +68,12 @@ export default class App extends Component {
             <div>
               <h2 className="total">{totalItems} books about {subject}</h2>
               <Books items={items}/>
-              <div>Paging will go here</div>
+              <div>
+                <Paging totalItems={totalItems}
+                  page={page}
+                  onPrev={this.handlePrev}
+                  onNext={this.handleNext}/>
+              </div>
             </div>
           )}
         </main>
