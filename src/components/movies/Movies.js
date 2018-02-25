@@ -12,7 +12,7 @@ export default class Movies extends Component {
         const { results } = this.props;
 
         return (
-            <ul>
+            <ul className="results-grid">
                 {results.map((movie, index) => {
                     return <Movie key={index} movie={movie}/>
                 })}

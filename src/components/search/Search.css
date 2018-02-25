@@ -5,3 +5,7 @@ form {
 form.input {
     display: block;
 }
+
+search {
+    padding: 10em;
+}
