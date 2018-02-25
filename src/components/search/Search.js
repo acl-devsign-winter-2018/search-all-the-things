@@ -30,7 +30,7 @@ export default class Search extends Component {
         const { search } = this.state;
 
         return (
-            <div>
+            <div className="search">
                 <form onSubmit={this.handleSubmit}>
                 <label>
                 <input name="search" value={search} onChange={this.handleChange}/>

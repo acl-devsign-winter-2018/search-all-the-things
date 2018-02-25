@@ -60,18 +60,24 @@ export default class App extends Component {
         const ofXPages = Math.ceil(totalResults/10);
 
         return(
-            <div>
-                <header>
+            <div className="app">
+                <header id="header">
+                    <h1>Movie Search App</h1>
                     <Search onSearch={this.handleSearch}/>
                 </header>
-                <main>
+                <main id="main">
                     
-                    <h4>Search for &quot;{topic}&quot; found {totalResults} matches</h4>
-                    <div> This is page {page} of {ofXPages}</div>
+                    <div className="search-header">
+                        <h4>Search for &quot;{topic}&quot; found {totalResults} matches</h4>
+                        
+                    </div>
+
                     <div>{loading && 'Loading...'}</div>
-                    <div>Paging goes here
-                    <button onClick={this.handlePrev} >Previous page</button>
-                    <button onClick={this.handleNext} >Next page</button>
+                    
+                    <div>
+                        <div> This is page {page} of {ofXPages}</div>
+                        <button onClick={this.handlePrev} >Previous page</button>
+                        <button onClick={this.handleNext} >Next page</button>
                     </div>
 
                     {results && (
