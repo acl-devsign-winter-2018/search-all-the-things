@@ -67,13 +67,13 @@ export default class App extends Component {
           {items && (
             <div>
               <h2 className="total">{totalItems} books about {subject}</h2>
-              <Books items={items}/>
               <div>
                 <Paging totalItems={totalItems}
                   page={page}
                   onPrev={this.handlePrev}
                   onNext={this.handleNext}/>
               </div>
+              <Books items={items}/>
             </div>
           )}
         </main>
