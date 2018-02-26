@@ -13,7 +13,8 @@ export default class Search extends Component {
 
     state = {
         results: [],
-        error: null
+        error: null,
+        page: 1
     }
 
 
