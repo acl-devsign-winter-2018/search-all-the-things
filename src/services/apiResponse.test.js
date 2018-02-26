@@ -1,0 +1,3 @@
+import { checkResponseData } from './movieAPI';
+
+
