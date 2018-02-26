@@ -99,8 +99,14 @@ export default class Search extends Component {
 
                             <SearchForm onSearch={this.handleSearch}/>
 
-                            {error && <div>{error}</div>}
-                            {(!error && movies) && <Movies movie={movie}/>}
+                            {/* {error && <div>{error}</div>}
+                            {(!error && results) && <Movies movie={movie}/>} */}
+
+                        {results && (
+                        <div>
+                            <Movies results={results}/>
+                        </div>
+                        )}
 
                             {/* <label> */}
                             {/* <input name="search" value={search} onChange={this.handleChange}/>
@@ -125,11 +131,11 @@ export default class Search extends Component {
                         <button onClick={this.handleNext} >Next page</button>
                     </div>
 
-                    {results && (
+                    {/* {results && (
                         <div>
-                            {/* <Movies results={results}/> */}
+                            <Movies results={results}/>
                         </div>
-                    )}
+                    )} */}
                 </main>
             </div>
         );
