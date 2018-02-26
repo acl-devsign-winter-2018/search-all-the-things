@@ -93,27 +93,15 @@ export default class Search extends Component {
             <div className="app">
                 <header id="header">
                     <h1>Movie Search App</h1>
-                    {/* <Search onSearch={this.handleSearch}/> */}
                         <div>
-                            
-
                             <SearchForm onSearch={this.handleSearch}/>
 
-                            {/* {error && <div>{error}</div>}
-                            {(!error && results) && <Movies movie={movie}/>} */}
+                            {results && (
+                            <div>
+                                <Movies results={results}/>
+                            </div>
+                            )}
 
-                        {results && (
-                        <div>
-                            <Movies results={results}/>
-                        </div>
-                        )}
-
-                            {/* <label> */}
-                            {/* <input name="search" value={search} onChange={this.handleChange}/>
-            
-                            <button>Search</button>
-                            </label> */}
-                           
                         </div>
                 </header>
                 <main id="main">
@@ -130,12 +118,6 @@ export default class Search extends Component {
                         <button onClick={this.handlePrev} >Previous page</button>
                         <button onClick={this.handleNext} >Next page</button>
                     </div>
-
-                    {/* {results && (
-                        <div>
-                            <Movies results={results}/>
-                        </div>
-                    )} */}
                 </main>
             </div>
         );
@@ -144,21 +126,3 @@ export default class Search extends Component {
     
 }
 
-
-
-// render () {
-        //     const { search } = this.state;
-    
-        //     return (
-                // <div className="search">
-                //     <form onSubmit={this.handleSubmit}>
-                //     <label>
-                //     <input name="search" value={search} onChange={this.handleChange}/>
-    
-                //     <button>Search</button>
-                //     {/* <pre>{JSON.stringify(this.state, true, 2)}</pre> */}
-                //     </label>
-                //     </form>
-                // </div>
-        //     );
-        // }
