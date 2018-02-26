@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App passing test 1`] = `
+<div>
+  <header>
+    <h1>
+      Find Your Next Favorite Book
+    </h1>
+  </header>
+  <Search
+    onSearch={[Function]}
+  />
+  <main>
+    <div />
+  </main>
+</div>
+`;
