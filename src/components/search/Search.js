@@ -5,6 +5,7 @@ import Movies from '../movies/Movies';
 import { search } from '../../services/movieAPI';
 
 
+
 const PAGE_SIZE = 10;
 
 export default class Search extends Component {
@@ -84,7 +85,16 @@ export default class Search extends Component {
             <div className="app">
                 <header id="header">
                     <h1>Movie Search App</h1>
-                    <Search onSearch={this.handleSearch}/>
+                    {/* <Search onSearch={this.handleSearch}/> */}
+                        <div className="search" >
+                            <form onSubmit={this.handleSubmit}>
+                            <label>
+                            <input name="search" value={search} onChange={this.handleChange}/>
+            
+                            <button>Search</button>
+                            </label>
+                            </form>
+                        </div>
                 </header>
                 <main id="main">
                     
@@ -103,7 +113,7 @@ export default class Search extends Component {
 
                     {results && (
                         <div>
-                            <Movies results={results}/>
+                            {/* <Movies results={results}/> */}
                         </div>
                     )}
                 </main>
@@ -111,21 +121,24 @@ export default class Search extends Component {
         );
         
     }
-
+    
 }
-        // render () {
+
+
+
+// render () {
         //     const { search } = this.state;
     
         //     return (
-        //         <div className="search">
-        //             <form onSubmit={this.handleSubmit}>
-        //             <label>
-        //             <input name="search" value={search} onChange={this.handleChange}/>
+                // <div className="search">
+                //     <form onSubmit={this.handleSubmit}>
+                //     <label>
+                //     <input name="search" value={search} onChange={this.handleChange}/>
     
-        //             <button>Search</button>
-        //             {/* <pre>{JSON.stringify(this.state, true, 2)}</pre> */}
-        //             </label>
-        //             </form>
-        //         </div>
+                //     <button>Search</button>
+                //     {/* <pre>{JSON.stringify(this.state, true, 2)}</pre> */}
+                //     </label>
+                //     </form>
+                // </div>
         //     );
         // }

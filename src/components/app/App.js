@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Header from '../header/Header'
-// import Search from '../search/Search';
+import Search from '../search/Search';
 // import { search } from '../../services/movieApi';
 // import Movies from '../movies/Movies';
 
@@ -22,7 +22,7 @@ export default class App extends Component {
                         <Switch>
                             <Route exact path="/" component={Home}/> 
                             {/* () => <div> returns automatically</div> */}
-                            {/* <Route path="/search" component={Search}/> */}
+                            <Route path="/search" component={Search}/>
 
                             {/* <Redirect to="/"/> */}
 
@@ -35,7 +35,7 @@ export default class App extends Component {
 }
 class Home extends Component {
     render() {
-        return <div>I am Home!</div>;
+        return <div>I am the component Home!</div>;
     }
     }
 

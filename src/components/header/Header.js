@@ -12,8 +12,8 @@ export default class Header extends Component {
           <h1>Movie Search APP</h1>
           <nav>
             <ul className={styles.nav}>
-              <li><Link to="/">Home</Link></li>
-              {/* <li><Link to="/search">Search</Link></li> */}
+              <li><Link to="/">Home link text from header</Link></li>
+              <li><Link to="/search">Search</Link></li>
               {/* <Route path="/movies" render={() => <li>.</li>}/> */}
             </ul>
           </nav>
