@@ -64,7 +64,6 @@ export default class App extends Component {
         
         <main>
           <div>{loading && <img src="https://media.giphy.com/media/l0HlSF89is7bCAjte/giphy.gif"/>}</div>
-          {/* what do I need to tell the below line to get it to render message only after searching */}
           <div>{(subject && totalItems === 0) && (<p>Found no books about {subject}.</p>)}</div> 
           {items && (
             <div>

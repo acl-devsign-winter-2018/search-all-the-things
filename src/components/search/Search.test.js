@@ -18,7 +18,7 @@ describe('Search', () => {
 
     const wrapper = shallow(<Search onSearch={handleSearch}/>);
 
-    const Search = 
+    const Search = ''
 
   });
 
