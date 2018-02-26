@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Search.css'
 import Movies from '../movies/Movies';
 import { search } from '../../services/movieAPI';
+import SearchForm from '../search/SearchForm';
 
 
 
@@ -11,26 +12,32 @@ const PAGE_SIZE = 10;
 export default class Search extends Component {
 
     state = {
-        title: null,
-        topic: null,
         results: [],
-        page: 1,
-        loading: false,
-        search: ''
+        error: null
     }
+
+
+    // state = {
+    //     title: null,
+    //     topic: null,
+    //     results: [],
+    //     page: 1,
+    //     loading: false,
+    //     search: ''
+    // }
 
 
     static propTypes = {
         onSearch: PropTypes.func.isRequired
     };
 
-    handleSubmit = ( event ) => {
-        event.preventDefault();
-        const { search } = this.state;
-        if(!search) return;
+    // handleSubmit = ( event ) => {
+    //     event.preventDefault();
+    //     const { search } = this.state;
+    //     if(!search) return;
 
-        this.props.onSearch(search)
-    }
+    //     this.props.onSearch(search)
+    // }
 
     //keeping things in sync
     handleChange =  ({ target }) => {
@@ -77,7 +84,7 @@ export default class Search extends Component {
     } 
 
     render() {
-        const { loading, results, topic, page, search, totalResults } = this.state;
+        const { error, loading, movies, results, topic, page, search, totalResults } = this.state;
 
         const ofXPages = Math.ceil(totalResults/10);
 
@@ -86,14 +93,20 @@ export default class Search extends Component {
                 <header id="header">
                     <h1>Movie Search App</h1>
                     {/* <Search onSearch={this.handleSearch}/> */}
-                        <div className="search" >
-                            <form onSubmit={this.handleSubmit}>
-                            <label>
-                            <input name="search" value={search} onChange={this.handleChange}/>
+                        <div>
+                            
+
+                            <SearchForm onSearch={this.handleSearch}/>
+
+                            {error && <div>{error}</div>}
+                            {(!error && movies) && <Movies movie={movie}/>}
+
+                            {/* <label> */}
+                            {/* <input name="search" value={search} onChange={this.handleChange}/>
             
                             <button>Search</button>
-                            </label>
-                            </form>
+                            </label> */}
+                           
                         </div>
                 </header>
                 <main id="main">
