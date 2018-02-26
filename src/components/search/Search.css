@@ -1,0 +1,11 @@
+form {
+    padding: 10px;
+}
+
+form.input {
+    display: block;
+}
+
+search {
+    padding: 10em;
+}

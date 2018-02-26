@@ -1,0 +1,33 @@
+header, main {
+    padding: 20px
+}
+
+.app {
+    display: grid;
+    text-align: center;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+}
+
+ul.result-grid {
+    display: grid;
+    grid-gap: 3
+    em;
+    list-style: none;
+}
+
+#header {
+grid-area: header;
+padding: 2rem 2rem 0rem;
+text-align: center;
+position: relative;
+}  
+
+#main {
+grid-area: content;
+text-align: center;
+}
+  
