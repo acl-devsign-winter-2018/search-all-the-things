@@ -29,23 +29,15 @@ export default class Search extends Component {
 
 
     static propTypes = {
-        onSearch: PropTypes.func.isRequired
+        onSearch: PropTypes.func
     };
+    //saying there will never be a search componant that doesnt have onSearch!
 
-    // handleSubmit = ( event ) => {
-    //     event.preventDefault();
-    //     const { search } = this.state;
-    //     if(!search) return;
-
-    //     this.props.onSearch(search)
-    // }
 
     //keeping things in sync
     handleChange =  ({ target }) => {
         this.setState({ search: target.value });
     }
-
-    ////////
 
    
     searchMovies () {

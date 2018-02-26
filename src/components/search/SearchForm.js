@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 export default class SearchForm extends Component {
 
     static propTypes = {
-        onSearch: PropTypes.func.isRequired
+        onSearch: PropTypes.func
     };
-    
+
     handleSubmit = event => {
         event.preventDefault();
         this.props.onSearch(event.target.elements.search.value);
