@@ -2,6 +2,10 @@ const API_KEY = 'ef6a96a7';
 const BASE_URL = 'http://www.omdbapi.com/?';
 
 
+export const checkResponseData = data => {
+    if(data.Response === 'True') return data;
+    throw data.Error;
+  };
 
 export function search(topic, page) {
     const url = `${BASE_URL}s=${topic}&page=${page}&apikey=${API_KEY}`;
