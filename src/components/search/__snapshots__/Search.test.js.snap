@@ -5,8 +5,9 @@ exports[`Search Renders Properly 1`] = `
   onSubmit={[Function]}
 >
   <label>
-    Search for books:
+    Search for books by subject:
     <input
+      name="search"
       onChange={[Function]}
       value=""
     />

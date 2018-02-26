@@ -64,7 +64,7 @@ export default class App extends Component {
         
         <main>
           <div>{loading && <img src="https://media.giphy.com/media/l0HlSF89is7bCAjte/giphy.gif"/>}</div>
-          <div>{(subject && totalItems === 0) && (<p>Found no books about {subject}.</p>)}</div> 
+          <div className="none">{(subject && totalItems === 0) && (<p>Found no books about {subject}.</p>)}</div> 
           {items && (
             <div>
               <h2 className="total">{totalItems} books about {subject}</h2>

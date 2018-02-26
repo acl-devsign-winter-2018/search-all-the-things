@@ -5,7 +5,7 @@ import styles from './Search.css';
 export default class Search extends Component {
 
   static propTypes = {
-    onSearch: PropTypes.func.isRequired
+    onSearch: PropTypes.func
   };
 
   state = {
@@ -26,11 +26,12 @@ export default class Search extends Component {
   render() {
 
     const { subject } = this.state;
+    
     return (
       <form className={styles.search} onSubmit={this.handleSubmit}>
         <label>
           Search for books by subject:
-          <input value={subject} onChange={this.handleChange}/>
+          <input name="search" value={subject} onChange={this.handleChange}/>
         </label>
         <button>Find</button>
 

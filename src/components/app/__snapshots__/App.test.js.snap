@@ -12,22 +12,9 @@ exports[`App App test 1`] = `
   />
   <main>
     <div />
-  </main>
-</div>
-`;
-
-exports[`App passing test 1`] = `
-<div>
-  <header>
-    <h1>
-      Find Your Next Favorite Book
-    </h1>
-  </header>
-  <Search
-    onSearch={[Function]}
-  />
-  <main>
-    <div />
+    <div
+      className="none"
+    />
   </main>
 </div>
 `;
