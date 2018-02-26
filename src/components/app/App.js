@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 // import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-import Movies from '../movies/Movies';
-import { search } from '../../services/movieApi';
+import Header from './header/Header'
 import Search from '../search/Search';
+import { search } from '../../services/movieApi';
+import Movies from '../movies/Movies';
+
 
 const PAGE_SIZE = 10;
 
