@@ -29,7 +29,7 @@ export default class Search extends Component {
     return (
       <form className={styles.search} onSubmit={this.handleSubmit}>
         <label>
-          Search for books:
+          Search for books by subject:
           <input value={subject} onChange={this.handleChange}/>
         </label>
         <button>Find</button>
