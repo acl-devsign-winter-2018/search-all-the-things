@@ -1,0 +1,21 @@
+.pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 60%;
+  margin: 20px auto;
+
+  li {
+    width: 25px;
+    margin: 3px;
+    text-align: center;
+  }
+
+  li:hover, .pageCur { 
+    background: rgb(255,213,111);
+    color: rgb(40,40,40);
+  }
+
+}
