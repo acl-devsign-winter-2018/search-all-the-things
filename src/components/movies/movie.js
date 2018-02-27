@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
 export default class Movie extends Component {
 
     static propTypes = {
@@ -13,7 +14,6 @@ export default class Movie extends Component {
     render() {
 
         const { imdbID, Poster, Title, Year } = this.props.movie;
-        console.log(imdbID, Poster, Title, Year)
         return (
             <li>
                 <h3>{Title}</h3>
