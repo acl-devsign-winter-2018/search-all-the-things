@@ -1,0 +1,14 @@
+header {
+  text-align: center;
+  font-size: 1.5em;
+  background-color: darkolivegreen;
+}
+
+.total {
+  text-align: center;
+}
+
+.none {
+  font-size: 1.25em;
+  font-weight: bold;
+}
